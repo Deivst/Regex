@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Pattern Guide</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .pattern-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .pattern {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            margin: 10px 0;
+            border: 1px solid #dee2e6;
+        }
+        .example {
+            color: #2ecc71;
+            margin-left: 20px;
+        }
+        .language-section {
+            border-left: 4px solid #3498db;
+            padding-left: 20px;
+            margin: 30px 0;
+        }
+        .note {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Regular Expression (Regex) Pattern Guide</h1>
+
+    <div class="language-section">
+        <h2>English Patterns 🇺🇸</h2>
+
+        <div class="pattern-container">
+            <h3>Email Validation</h3>
+            <div class="pattern">^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$</div>
+            <p>Matches:</p>
+            <div class="example">
+                ✓ user@domain.com<br>
+                ✓ first.last@example.co.uk<br>
+                ✓ user.name+tag@domain.com
+            </div>
+        </div>
+
+        <div class="pattern-container">
+            <h3>US Social Security Number</h3>
+            <div class="pattern">^\d{3}-\d{2}-\d{4}$</div>
+            <p>Matches:</p>
+            <div class="example">
+                ✓ 123-45-6789
+            </div>
+        </div>
+
+        <div class="pattern-container">
+            <h3>US Phone Numbers</h3>
+            <div class="pattern">^(\+1)?[\s-]?\(?([0-9]{3})\)?[\s-]?([0-9]{3})[\s-]?([0-9]{4})$</div>
+            <p>Matches:</p>
+            <div class="example">
+                ✓ (555) 123-4567<br>
+                ✓ +1 555-123-4567<br>
+                ✓ 5551234567
+            </div>
+        </div>
+
+        <div class="pattern-container">
+            <h3>Username Validation</h3>
+            <div class="pattern">^[a-zA-Z][a-zA-Z0-9_]{3,15}$</div>
+            <p>Matches:</p>
+            <div class="example">
+                ✓ john_doe<br>
+                ✓ user123<br>
+                ✓ techie_2024
+            </div>
+        </div>
+    </div>
+
+    <div class="language-section">
+        <h2>Spanish Patterns 🇨🇴</h2>
+
+        <div class="pattern-container">
+            <h3>Colombian ID (Cédula)</h3>
+            <div class="pattern">^[1-9][0-9]{5,11}$</div>
+            <p>Matches:</p>
+            <div class="example">
+                ✓ 79856321<br>
+                ✓ 1023456789
+            </div>
+        </div>
+
+        <div class="pattern-container">
+            <h3>Colombian Phone Numbers</h3>
+            <div class="pattern">^(\+57|57)?[3][0-9]{9}$</div>
+            <p>Matches:</p>
+            <div class="example">
+                ✓ 3001234567<br>
+                ✓ +573001234567
+            </div>
+        </div>
+
+        <div class="pattern-container">
+            <h3>Colombian Addresses</h3>
+            <div class="pattern">^(Calle|Carrera|Diagonal|Transversal|Cra|Cll|Diag|Trans)\s*[1-9][0-9]{0,2}[A-Z]?\s*#\s*[1-9][0-9]{0,2}[A-Z]?\s*-\s*[1-9][0-9]{0,2}</div>
+            <p>Matches:</p>
+            <div class="example">
+                ✓ Calle 123 # 45-67<br>
+                ✓ Cra 7 # 72-41<br>
+                ✓ Diagonal 54B # 15A-32
+            </div>
+        </div>
+    </div>
+
+    <div class="note">
+        <h3>Important Notes:</h3>
+        <ul>
+            <li>Always test patterns thoroughly before implementation</li>
+            <li>Consider edge cases and special requirements</li>
+            <li>Update patterns regularly to match new format requirements</li>
+            <li>Use appropriate flags (like 'i' for case-insensitive matching) when needed</li>
+        </ul>
+    </div>
+
+    <body>
+        <h1>Guia de Expressões Regulares (Regex) 🇧🇷</h1>
+    
+        <div class="language-section">
+            <h2>Padrões Brasileiros</h2>
+    
+            <div class="pattern-container">
+                <h3>CPF</h3>
+                <div class="pattern">^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$</div>
+                <p>Corresponde a:</p>
+                <div class="example">
+                    ✓ 123.456.789-10<br>
+                    ✓ 12345678910
+                </div>
+            </div>
+    
+            <div class="pattern-container">
+                <h3>CNPJ</h3>
+                <div class="pattern">^\d{2}\.?\d{3}\.?\d{3}\/?\d{4}-?\d{2}$</div>
+                <p>Corresponde a:</p>
+                <div class="example">
+                    ✓ 12.345.678/0001-90<br>
+                    ✓ 12345678000190
+                </div>
+            </div>
+    
+            <div class="pattern-container">
+                <h3>Telefones Brasileiros</h3>
+                <div class="pattern">^(\+55|55)?(?:[14689][1-9]|2[12478]|3[1234578]|5[1345]|7[134579])\s?(?:9\d{4}|\d{4})-?\d{4}$</div>
+                <p>Corresponde a:</p>
+                <div class="example">
+                    ✓ +55 11 98765-4321<br>
+                    ✓ 11987654321<br>
+                    ✓ 1198765-4321
+                </div>
+            </div>
+    
+            <div class="pattern-container">
+                <h3>CEP</h3>
+                <div class="pattern">^\d{5}-?\d{3}$</div>
+                <p>Corresponde a:</p>
+                <div class="example">
+                    ✓ 01234-567<br>
+                    ✓ 01234567
+                </div>
+            </div>
+    
+            <div class="pattern-container">
+                <h3>Endereços Brasileiros</h3>
+                <div class="pattern">^(Rua|Avenida|Av|R\.|Travessa|Rod\.)\s+([A-Za-zÀ-ú\s]+),\s+(\d+)\s*-?\s*([A-Za-zÀ-ú\s]+),\s+([A-Za-zÀ-ú\s]+)\s*-\s*([A-Z]{2}),\s+(\d{5}-\d{3})$</div>
+                <p>Corresponde a:</p>
+                <div class="example">
+                    ✓ Rua das Flores, 123 - Centro, São Paulo - SP, 01234-567<br>
+                    ✓ Av. Paulista, 1000, Bela Vista, São Paulo - SP, 01310-100
+                </div>
+            </div>
+    
+            <div class="pattern-container">
+                <h3>E-mail</h3>
+                <div class="pattern">^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$</div>
+                <p>Corresponde a:</p>
+                <div class="example">
+                    ✓ usuario@dominio.com.br<br>
+                    ✓ nome.sobrenome@empresa.com.br
+                </div>
+            </div>
+        </div>
+    
+        <div class="note">
+            <h3>Notas Importantes:</h3>
+            <ul>
+                <li>Sempre teste os padrões antes da implementação</li>
+                <li>Considere casos especiais e requisitos específicos</li>
+                <li>Atualize os padrões regularmente conforme mudanças nos formatos oficiais</li>
+                <li>Use flags apropriadas (como 'i' para correspondência sem distinção entre maiúsculas e minúsculas) quando necessário</li>
+            </ul>
+        </div>
+
+</body>
+</html>
